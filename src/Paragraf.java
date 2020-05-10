@@ -1,24 +1,23 @@
+/*
+s17245
+ */
+
 public class Paragraf extends Zapis {
 
+    private static int licznik;
     //private static final long serialVersionUID = 7058247124576220209L;
     private Paragraf paragraf;
 
-    String nazwa;
-    String text;
+    private String nazwa;
+    private String text;
     //String kluczRodzic = UUID.randomUUID().toString();
-    String kluczRodzic;
+    private String kluczRodzic;
     //String kluczDzieckoLewe = UUID.randomUUID().toString();
     //String kluczDzieckoPrawe = UUID.randomUUID().toString();
-    Paragraf paragrafLewy;
-    Paragraf paragrafPrawy;
-    Paragraf góra;
-    Paragraf dół;
-    private static int licznik;
-
-
-    public Paragraf() {
-
-    }
+    private Paragraf paragrafLewy;
+    private Paragraf paragrafPrawy;
+    private Paragraf góra;
+    private Paragraf dół;
 
 
     // pierwszy
@@ -61,10 +60,10 @@ public class Paragraf extends Zapis {
     public Paragraf(String nazwa, Paragraf góra, Paragraf dzieckoLewe, Paragraf dzieckoPrawe, String text) {
 
         this.nazwa  =   nazwa;
-        this.text   =   text;
         this.góra   =   góra;
         this.paragrafLewy = dzieckoLewe;
         this.paragrafPrawy = dzieckoPrawe;
+        this.text   =   text;
         //this.kluczRodzic  =   kluczRodzic;
         //this.kluczDzieckoLewe = kluczDzieckoLewe;
         //this.kluczDzieckoPrawe = kluczDzieckoPrawe;

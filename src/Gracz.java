@@ -1,14 +1,18 @@
+/*
+s17245
+ */
+
 public class Gracz extends Zapis {
 
     //private static final long serialVersionUID = 7098247124574220209L;
-    public String imie;
-    public String nazwisko;
-    public String email;
+    protected String imie;
+    protected String nazwisko;
+    protected String email;
     private String at = "@";
-    public String nick;  //   #dej optional
-    public int idRola;
-    private String[] rolaName = new String[]{"Gracz", "Autor", "Developer"};
-    public String RODO;
+    protected String nick;  //   #dej optional
+    protected int idRola;
+    protected String[] rolaName = new String[]{"Gracz", "Autor", "Developer"};
+    protected String RODO;
 
     public Gracz(String imie, String nazwisko, String email, String nick, int idRola, String RODO) throws Exception {
 
@@ -33,13 +37,13 @@ public class Gracz extends Zapis {
         }
     }
 
+    public Gracz() {
+    }
+
     public String toString() {
 
         return dajRole(idRola) + " " + imie + " " + nazwisko + " email: " + email + " Nick: " + nick + " zgoda udzielona: " + sprawdźRodo(RODO);
 
-    }
-
-    public Gracz() {
     }
 
     public String dajRole(int i) {

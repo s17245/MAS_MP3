@@ -1,3 +1,7 @@
+/*
+s17245
+ */
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -53,12 +57,15 @@ public class Zapis implements Serializable {
         if (listaZapisu.containsKey(klasa)) {
 
             lista = listaZapisu.get(klasa);
+
         } else {
             throw new Exception("nieznana klasa: " + klasa);
         }
+
         System.out.println("zapisano: " + klasa.getSimpleName());
-        for (Object obj : lista) {
-            System.out.println(obj);
+
+        for (Object obiekt : lista) {
+            System.out.println(obiekt);
         }
     }
 }
