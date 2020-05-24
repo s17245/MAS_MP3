@@ -2,6 +2,11 @@
 s17245
  */
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 public class Gracz extends Zapis {
 
     //private static final long serialVersionUID = 7098247124574220209L;
@@ -13,6 +18,9 @@ public class Gracz extends Zapis {
     protected int idRola;
     protected String[] rolaName = new String[]{"Gracz", "Autor", "Developer"};
     protected String RODO;
+
+
+    private List<Pesel> peselMap = new ArrayList<>();
 
     public Gracz(String imie, String nazwisko, String email, String nick, int idRola, String RODO) throws Exception {
 
@@ -32,17 +40,15 @@ public class Gracz extends Zapis {
             throw new Exception("w adresie zabrakło @ ");
         }
 
-        if (nick.contains("")) {
+        if (nick==null) {
             this.nick = "brak nick'a";
         }
     }
 
-    public Gracz() {
-    }
 
     public String toString() {
 
-        return dajRole(idRola) + " " + imie + " " + nazwisko + " email: " + email + " Nick: " + nick + " zgoda udzielona: " + sprawdźRodo(RODO);
+        return dajRole(idRola) + ", " + imie + " " + nazwisko + " , email: " + email + ", Nick: " + nick + ", zgoda udzielona: " + sprawdźRodo(RODO);
 
     }
 
@@ -74,4 +80,11 @@ public class Gracz extends Zapis {
 
     }
 
+    public void dodajPesel(Pesel pesel) {
+        if(!peselMap.contains(pesel)){
+            peselMap.add(pesel);
+            pesel.dodajPeselDoGracza(this);
+        }
+        System.out.println("pesel "+ peselMap);
+    }
 }

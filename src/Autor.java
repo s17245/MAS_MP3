@@ -2,17 +2,18 @@
 s17245
  */
 
-public class Autor extends Gracz {
+public class Autor  {
 
     public Autor(String imie, String nazwisko, String email, String nick, int idRola, String RODO) {
+        //super(String imie, String nazwisko, String email, String nick, int idRola, String RODO);
 
 
-        super.imie = imie;
-        super.nazwisko = nazwisko;
-        super.email = email;
-        super.nick = nick;
-        super.idRola = idRola;
-        super.RODO = RODO;
+//        super.imie = imie;
+//        super.nazwisko = nazwisko;
+//        super.email = email;
+//        super.nick = nick;
+//        super.idRola = idRola;
+//        super.RODO = RODO;
 
     }
 

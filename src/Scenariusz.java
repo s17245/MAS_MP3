@@ -2,46 +2,43 @@
 s17245
  */
 
-import java.util.UUID;
+import java.lang.reflect.GenericArrayType;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Scenariusz extends Zapis {
 
-    //private static final long serialVersionUID = 7053246124576210409L;
-    private String nazwa;
-    ///private String klucz = UUID.randomUUID().toString();
-    private String klucz;
-    private Paragraf start;
-    private String data;
 
-    public Scenariusz(){}
+    public String nazwa;
+    private String text;
+    private Gielda gielda; //asocjacja 1..* - licznośc 1
 
-    public Scenariusz (String nazwa, String klucz,  Paragraf pierwszyParagraf, String data) {
 
+    public Scenariusz (String nazwa, String text) {
+
+        this.gielda = gielda;
         this.nazwa = nazwa;
-        this.klucz = klucz;
-        this.start = pierwszyParagraf;
-        this.data = data;
-        System.out.println("Scenariusz " + nazwa + " uruchomiony: " + data);
+        //System.out.println("Scenariusz " + nazwa + " uruchomiony: " + text);
 
-        if(nazwa.equals("") || klucz.equals("") || pierwszyParagraf==null){
+        if(nazwa.equals("")){
             System.out.println("podano niewłaściwe dane");
         }
 
     }
 
-    /*
-     pseudonim autora;
-     listaParagrafów;
-     liczbaParagrafów
-     liczbaZnaków;
-    czyPrzeczytany;
-    */
-
-
-    public String toString() {
-
-        return    this.nazwa + " " + this.data;
+//setter
+    public void ustawGielde(Gielda gielda) {
+        this.gielda = gielda;
 
     }
+//getter
+    public Gielda pobierzScenariusz(Gielda gielda){
+        return gielda;
+    }
 
+    @Override
+    public String toString(){
+        String text = "Gielda: " + nazwa + "\n";
+        return text ;
+    }
 }

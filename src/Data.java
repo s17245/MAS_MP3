@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 public class Data {
 
     //private LocalDateTime czas = LocalDateTime.now();
-    private LocalDateTime czas;// = LocalDateTime.now();
+    private final LocalDateTime czas;// = LocalDateTime.now();
 
     private final DateTimeFormatter format;
     //private static final long serialVersionUID = 4156247124576225208L;
@@ -20,6 +20,8 @@ public class Data {
         this.czas = LocalDateTime.now();
         this.format = DateTimeFormatter.ofPattern("HH:mm:ss");
     }
+
+
 
     @Override
     public String toString() {
