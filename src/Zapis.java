@@ -68,4 +68,19 @@ public class Zapis implements Serializable {
             System.out.println(obiekt);
         }
     }
+
+    public static <T> List<T> dajZapis(Class myClass) {
+        List<Zapis> zapis = null;
+        if (listaZapisu.containsKey(myClass)) {
+            zapis = listaZapisu.get(myClass);
+            for (Zapis cl : zapis) {
+
+                System.out.println(myClass.toString() + " " + cl);
+            }
+        } else {
+            System.out.println("Brak klasy: " + myClass.toString());
+        }
+        return (List<T>) zapis;
+    }
+
 }

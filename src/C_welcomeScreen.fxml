@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="350.0" maxWidth="500.0" minHeight="350.0" minWidth="500.0" nodeOrientation="LEFT_TO_RIGHT"
+      prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerEkranPowitalny">
+   <opaqueInsets>
+      <Insets/>
+   </opaqueInsets>
+   <Label layoutX="100.0" layoutY="100.0" prefHeight="30.0" prefWidth="100.0" text="user">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
+   <TextField fx:id="userText" layoutX="220.0" layoutY="100.0"/>
+   <Label layoutX="100.0" layoutY="150.0" prefHeight="30.0" prefWidth="100.0" text="hasło">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
+   <PasswordField fx:id="pswdText" layoutX="220.0" layoutY="150.0"/>
+   <Label layoutX="20.0" layoutY="20.0" text="Witaj czytelniku">
+      <font>
+         <Font name="System Bold" size="18.0"/>
+      </font>
+   </Label>
+   <Button fx:id="loginBtn" layoutX="400.0" layoutY="150.0" mnemonicParsing="false" onAction="#pressLogin"
+           prefHeight="30.0" prefWidth="50.0" text="login"/>
+   <Button fx:id="exitBtn" layoutX="400.0" layoutY="300.0" mnemonicParsing="false" onAction="#pressExit"
+           prefHeight="30.0" prefWidth="50.0" text="exit"/>
+   <Label layoutX="300.0" layoutY="250.0" prefHeight="30.0" prefWidth="100.0" text="nie masz konta?">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
+   <Button layoutX="400.0" layoutY="250.0" mnemonicParsing="false" text="zarejestruj"/>
+   <Label fx:id="msgLabel" layoutX="220.0" layoutY="200.0" prefHeight="30.0" prefWidth="250.0">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </Label>
+</Pane>

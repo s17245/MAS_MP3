@@ -15,6 +15,7 @@ public class Mechanizm extends ZapisPlus implements Serializable {
     }
 
     public static int policzMechanizmy() {
+
         return licznik;
     }
 
@@ -31,11 +32,11 @@ public class Mechanizm extends ZapisPlus implements Serializable {
 
             Błąd błąd = Błąd.zgłośBłąd(nazwa, opis, data);
 
-            this.addPart(błąd.nazwa, this.nazwa,  błąd.zwrócDate(), błąd);
+            this.addPart(błąd.nazwa, this.nazwa,  błąd.pobierzCzas(), błąd);
 
         } else {
 
-            System.out.println("Pojazd nie istenieje");
+            System.out.println("nie istenieje błąd");
 
         }
 

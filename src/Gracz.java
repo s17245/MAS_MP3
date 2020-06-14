@@ -4,31 +4,32 @@ s17245
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class Gracz extends Zapis {
+
 
     //private static final long serialVersionUID = 7098247124574220209L;
     protected String imie;
     protected String nazwisko;
     protected String email;
     private String at = "@";
-    protected String nick;  //   #dej optional
+    protected static String nick;
+    protected static String hasło;
     protected int idRola;
     protected String[] rolaName = new String[]{"Gracz", "Autor", "Developer"};
     protected String RODO;
 
 
-    private List<Pesel> peselMap = new ArrayList<>();
+    private List<SprawdźPesel> sprawdźPeselMap = new ArrayList<>();
 
-    public Gracz(String imie, String nazwisko, String email, String nick, int idRola, String RODO) throws Exception {
+    public Gracz(String imie, String nazwisko, String email, String nick, String hasło,int idRola, String RODO) throws Exception {
 
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.email = email;
         this.at = at;
         this.nick = nick;
+        this.hasło = hasło;
         this.idRola = idRola;
         this.RODO = RODO;
 
@@ -58,8 +59,13 @@ public class Gracz extends Zapis {
 
     }
 
-    public String dajNick() {
-        return this.nick;
+    public static String dajNick() {
+        return nick;
+
+    }
+
+    public static String dajHasło(){
+        return hasło;
 
     }
 
@@ -80,11 +86,11 @@ public class Gracz extends Zapis {
 
     }
 
-    public void dodajPesel(Pesel pesel) {
-        if(!peselMap.contains(pesel)){
-            peselMap.add(pesel);
-            pesel.dodajPeselDoGracza(this);
+    public void dodajPesel(SprawdźPesel sprawdźPesel) {
+        if(!sprawdźPeselMap.contains(sprawdźPesel)){
+            sprawdźPeselMap.add(sprawdźPesel);
+            sprawdźPesel.dodajPeselDoGracza(this);
         }
-        System.out.println("pesel "+ peselMap);
+        System.out.println("pesel "+ sprawdźPeselMap);
     }
 }

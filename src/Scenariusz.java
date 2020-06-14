@@ -2,28 +2,28 @@
 s17245
  */
 
-import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Scenariusz extends Zapis {
 
 
     public String nazwa;
     private String text;
+    private String autor;
+    private String ocena;
     private Gielda gielda; //asocjacja 1..* - licznośc 1
+    public ArrayList<Paragraf> listaParagrafów = new ArrayList<>();
 
+    public Scenariusz (String nazwa, String autor, String ocena) {
 
-    public Scenariusz (String nazwa, String text) {
-
-        this.gielda = gielda;
+        // this.gielda = gielda;
         this.nazwa = nazwa;
-        //System.out.println("Scenariusz " + nazwa + " uruchomiony: " + text);
+        this.autor=autor;
+        this.ocena=ocena;
 
         if(nazwa.equals("")){
             System.out.println("podano niewłaściwe dane");
         }
-
     }
 
 //setter
@@ -32,8 +32,30 @@ public class Scenariusz extends Zapis {
 
     }
 //getter
-    public Gielda pobierzScenariusz(Gielda gielda){
+    public Gielda pobierzGielde(Gielda gielda){
+
         return gielda;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+    public String getNazwa() {
+        return nazwa;
+    }
+    public String getOcena() {
+        return ocena;
+    }
+
+    public void dodajParagraf(Paragraf p) throws Exception {
+
+        if (!listaParagrafów.contains(p)) {
+            this.listaParagrafów.add(p);
+            p.ustawScenariusz(this);
+
+        }else{
+            throw new Exception("paragraf już istnieje");
+        }
     }
 
     @Override
@@ -41,4 +63,6 @@ public class Scenariusz extends Zapis {
         String text = "Gielda: " + nazwa + "\n";
         return text ;
     }
+
+
 }

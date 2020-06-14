@@ -21,7 +21,7 @@ public class Błąd extends ZapisPlus implements Serializable {
 
     }
 
-    public String zwrócDate() {
+    public String pobierzCzas() {
         return data;
     }
 

@@ -7,6 +7,7 @@ public class Gielda extends Zapis implements Serializable {
     public int ocena;
     public ArrayList<Scenariusz> listaScenariuszy = new ArrayList<>(); //asocjacja 1..* - licznośc *
 
+
     public Gielda(String nazwa, int ocena) {
         this.nazwa = nazwa;
         this.ocena = ocena;
@@ -24,6 +25,8 @@ public class Gielda extends Zapis implements Serializable {
         }
     }
 
+
+
     public void usuńScenarius(Scenariusz scenariusz) throws Exception {
 
         if(listaScenariuszy.contains(scenariusz)) {
@@ -33,6 +36,10 @@ public class Gielda extends Zapis implements Serializable {
         }
     }
 
+    public String dajNazwe(){
+        return nazwa;
+
+    }
 
 
     @Override

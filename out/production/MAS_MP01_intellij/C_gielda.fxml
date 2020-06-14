@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="350.0" maxWidth="500.0" minHeight="350.0" minWidth="500.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerGiełda">
+    <children>
+        <Label layoutX="300.0" layoutY="20.0" prefHeight="30.0" prefWidth="100.0" text="witaj:">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Label>
+        <Label fx:id="nazwaUżytkownika" layoutX="350.0" layoutY="20.0" prefHeight="30.0" prefWidth="100.0" text="TD: nazwa usera">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Label>
+        <Label layoutX="20.0" layoutY="20.0" text="Gielda">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="exitBtn" layoutX="400.0" layoutY="300.0" mnemonicParsing="false" onAction="#nacisnijExit" prefHeight="30.0" prefWidth="50.0" text="exit" />
+      <Label layoutX="20.0" layoutY="50.0" prefHeight="30.0" prefWidth="150.0" text="wybierz scenariusz:">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Button fx:id="grajBtn" layoutX="400.0" layoutY="250.0" mnemonicParsing="false" onAction="#nacisnijGraj" prefHeight="30.0" prefWidth="50.0" text="graj" />
+      <ComboBox fx:id="scnCombobox" layoutX="20.0" layoutY="80.0" prefHeight="25.0" prefWidth="285.0" />
+      <Label fx:id="nazwaLabel" layoutX="20.0" layoutY="130.0" prefHeight="30.0" prefWidth="285.0" text="nazwa">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="nazwaAutor" layoutX="20.0" layoutY="180.0" prefHeight="30.0" prefWidth="285.0" text="autor">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="nazwaOcena" layoutX="20.0" layoutY="230.0" prefHeight="30.0" prefWidth="285.0" text="ocena">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Button fx:id="grajBtn1" layoutX="350.0" layoutY="80.0" mnemonicParsing="false" onAction="#naciśnijWięcej" prefHeight="25.0" prefWidth="100.0" text="więcej" />
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+</Pane>

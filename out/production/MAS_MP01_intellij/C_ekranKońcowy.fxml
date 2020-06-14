@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="350.0" maxWidth="500.0" minHeight="350.0" minWidth="500.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerEkranKońcowy">
+    <children>
+        <Label layoutX="300.0" layoutY="20.0" prefHeight="30.0" prefWidth="100.0" text="żegnaj: ">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Label>
+        <Label fx:id="nazwaUżytkownika" layoutX="350.0" layoutY="20.0" prefHeight="30.0" prefWidth="100.0" text="TD: nazwa usera">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Label>
+        <Label layoutX="20.0" layoutY="20.0" text="Wystaw ocenę:">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+      <RadioButton layoutX="25.0" layoutY="170.0" mnemonicParsing="false" text="1" />
+      <RadioButton layoutX="25.0" layoutY="200.0" mnemonicParsing="false" text="2" />
+      <RadioButton layoutX="25.0" layoutY="230.0" mnemonicParsing="false" text="3" />
+      <RadioButton layoutX="25.0" layoutY="260.0" mnemonicParsing="false" text="4" />
+        <Button fx:id="exitBtn" layoutX="400.0" layoutY="300.0" mnemonicParsing="false" onAction="#pressExit" prefHeight="30.0" prefWidth="50.0" text="exit" />
+        <Label layoutX="20.0" layoutY="50.0" prefHeight="30.0" prefWidth="250.0" text="Ocena pomoże innym użytkownikom">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Label>
+        <Button fx:id="bBtn" layoutX="400.0" layoutY="251.0" mnemonicParsing="false" onAction="#nacisnijB" prefHeight="30.0" prefWidth="90.0" text="zapisz ocenę" />
+      <Label layoutX="20.0" layoutY="133.0" prefHeight="30.0" prefWidth="250.0" text="TD: scenario name">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <RadioButton layoutX="25.0" layoutY="290.0" mnemonicParsing="false" text="5" />
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+</Pane>

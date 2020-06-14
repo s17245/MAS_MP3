@@ -3,7 +3,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Pesel {
+public class SprawdźPesel extends Zapis{
 
 
     protected String nazwa;
@@ -11,7 +11,7 @@ public class Pesel {
 
     private Map<String, Gracz> peselMap = new TreeMap<>();
 
-    public Pesel(String nazwa, String pesel) throws Exception {
+    public SprawdźPesel(String nazwa, String pesel) throws Exception {
 
         this.pesel=pesel;
         this.nazwa= nazwa;
