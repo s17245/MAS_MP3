@@ -80,7 +80,7 @@ public class Main extends Application {
 
     //asocjacja kwalifikowana
     private static void utworzGraczPesel() throws Exception {
-        Gracz gracz1 = new Gracz("Grzegorz","Brzęczyszczykiewicz","greg@greg.com", "greg", "123",0 ,"tak");
+        Gracz gracz1 = new Gracz("Grzegorz","Brzęczyszczykiewicz","greg@greg.com", "greg", "123",0 ,"tak",0);
         SprawdźPesel p1 = new SprawdźPesel("greg","87654312345");
         p1.dodajPeselDoGracza(gracz1);
         //System.out.println("\n" + p1);
@@ -100,17 +100,20 @@ public class Main extends Application {
         Scenariusz sc1 = new Scenariusz("pierwszy scenariusz", "Kowalsky","3");
         Scenariusz sc2 = new Scenariusz("drugi scenariusz", "MarianoItaliano","4");
 
-        Paragraf p1 = new Paragraf("sc1Pierwszy", "Witaj, lewo B, prawo A ",2);
-        Paragraf p2 = new Paragraf("sc1Drugi", "Prawo , prawo - A",1);
-        Paragraf p3 = new Paragraf("sc1Trzeci", "Lewo -  Koniec ",0);
-        Paragraf p4 = new Paragraf("sc1Czwarty", "Lewo - Koniec ",0);
-        Paragraf p5 = new Paragraf("sc1Piąty", "Lewo - Koniec ",0);
+        Paragraf p1 = new Paragraf("sc1Pierwszy", "Witaj, idziesz w lewo czy w prawo? \nlewo str 2, prawo 1 ",2);
+        Paragraf p2 = new Paragraf("sc1Drugi", "Drugi paragraf , prosto - str 3",1);
+        Paragraf p3 = new Paragraf("sc1Trzeci", "Drugi paragraf \nKoniec \n\n podziękowania str 5",1);
+        Paragraf p4 = new Paragraf("sc1Czwarty", "Trzeci paragraf \nPrawie Koniec \nstr 4",2);
+        Paragraf p5 = new Paragraf("sc1Piąty", "Czwarty paragraf \nKoniec \n\npodziękowania str 5 ",1);
+        Paragraf p6 = new Paragraf("sc1Szósty", "Dzięki,\nbyło extra\ndaj suba i dzwoneczek",0);
+
 
         sc1.dodajParagraf(p1);
         sc1.dodajParagraf(p2);
         sc1.dodajParagraf(p3);
         sc1.dodajParagraf(p4);
         sc1.dodajParagraf(p5);
+        sc1.dodajParagraf(p6);
 
         gielda.dodajScenariusz(sc1);
         System.out.println(gielda);

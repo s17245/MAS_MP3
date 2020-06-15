@@ -8,17 +8,26 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ControllerEkranPowitalny {
 
-    @FXML private javafx.scene.control.Button exitBtn;
-    @FXML private javafx.scene.control.Button loginBtn;
-    @FXML private javafx.scene.control.Label msgLabel;
-    @FXML private javafx.scene.control.PasswordField pswdText;
-    @FXML private javafx.scene.control.TextField userText;
+    private ArrayList<Gracz> listaGraczy = new ArrayList<>();
+    private ArrayList<String> listaNicków = new ArrayList<>();
+    private ArrayList<String> listaPswd = new ArrayList<>();
+    protected static String użytkownik;
+    private static String pswd;
 
-    public static String użytkownik;
+    @FXML
+    private javafx.scene.control.Button exitBtn;
+    @FXML
+    private javafx.scene.control.Button loginBtn;
+    @FXML
+    private javafx.scene.control.Label msgLabel;
+    @FXML
+    private javafx.scene.control.PasswordField pswdText;
+    @FXML
+    private javafx.scene.control.TextField userText;
+
 
     @FXML
     public void pressExit(ActionEvent e) {
@@ -26,39 +35,79 @@ public class ControllerEkranPowitalny {
         Platform.exit();
     }
 
+    @FXML
+    public void initialize() {
+
+        listaGraczy.addAll(Gracz.dajZapis(Gracz.class));
+
+        for ( Gracz g: listaGraczy){
+            listaNicków.add(g.dajNick());
+            listaPswd.add(g.dajHasło());
+        }
+    }
 
 
     @FXML
     public void pressLogin(ActionEvent e) throws Exception {
-        System.out.println("login");
+
+        //listaGraczy.addAll(Gracz.dajZapis(Gracz.class));
         użytkownik = userText.getText().toString();
+        pswd = pswdText.getText().toString();
+
         System.out.println("*******user*********" + użytkownik);
-        //listaGraczy.addAll(Gracz.pokażZapis(Gracz.class));
-        if( 1==1//Gracz.dajNick().equals(userText.getText().toString()) &&
-//            Gracz.dajHasło().equals(pswdText.getText().toString())
-           ) {
+        System.out.println("*******pswd*********" + pswd);
 
-            System.out.println("login pass");
+        if ( listaNicków.contains(użytkownik) && listaPswd.contains(pswd) ) {
 
-            msgLabel.setText("login i hasło poprawne, udzielam dostępu");
-
-
-
+            //java.util.Objects.equals( listaPrf.get(Integer.parseInt(nrStrony)).dajLiczbeKońcową()
             Parent root = FXMLLoader.load(getClass().getResource("C_gielda.fxml"));
             Scene scene = new Scene(root, 500, 350);
             Stage scenarioStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             scenarioStage.setScene(scene);
             scenarioStage.show();
 
+            System.out.println("login pass");
 
-
-        }else {
-            msgLabel.setText("błędny login i hasło");
+            msgLabel.setText("login i hasło poprawne, udzielam dostępu");
+        } else {
+            msgLabel.setText("login i hasło niepoprawne");
         }
+
+
+
+//        for (Gracz g : listaGraczy){
+//            System.out.println("przed pętlą" + g.dajNick());
+//            if ( g.dajNick() == użytkownik && g.dajHasło().equals(pswd)){
+//                System.out.println(" w ifie" + g.dajNick());
+//
+//            }else{
+//                msgLabel.setText("błędny login i hasło");
+//            }
+//        }
+
+//        for (Scenariusz s : listaScn) {
+//            if (s.getNazwa() == wybranyScn) {
+//                nazwaAutor.setText("autor: " + s.getAutor());
+//                nazwaOcena.setText("ocena: " + s.getOcena());
+//            }
+//        }
+
+        //Gracz.dajNick().equals(userText.getText().toString()) &&
+//            Gracz.dajHasło().equals(pswdText.getText().toString())
+        //listaGraczy.contains(użytkownik) && listaGraczy.contains(pswd)
+
+
+
+
+
+
+//        }else {
+//
+//        }
     }
 
-    public static String dajUżytkownika(){
+    public static String dajUżytkownika() {
+
         return użytkownik;
     }
-
 }

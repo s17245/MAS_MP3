@@ -23,6 +23,7 @@ public class ControllerGiełda {
 
     private ArrayList<Scenariusz> listaScn = new ArrayList<>();
     public static String output;
+
     @FXML
     private javafx.scene.control.Button exitBtn;
     @FXML
@@ -84,11 +85,11 @@ public class ControllerGiełda {
 
         for (Scenariusz s : listaScn) {
             if (s.getNazwa() == wybranyScn) {
-                nazwaAutor.setText("autor " + s.getAutor());
+                nazwaAutor.setText("autor: " + s.getAutor());
                 nazwaOcena.setText("ocena: " + s.getOcena());
             }
         }
-        nazwaLabel.setText(wybranyScn);
+        nazwaLabel.setText("nazwa scenariusza: " + wybranyScn);
 
     }
 

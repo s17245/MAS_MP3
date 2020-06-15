@@ -13,16 +13,17 @@ public class Gracz extends Zapis {
     protected String nazwisko;
     protected String email;
     private String at = "@";
-    protected static String nick;
-    protected static String hasło;
+    protected String nick;
+    protected String hasło;
     protected int idRola;
     protected String[] rolaName = new String[]{"Gracz", "Autor", "Developer"};
     protected String RODO;
+    public int zapisanyParagraf = 0;
 
 
     private List<SprawdźPesel> sprawdźPeselMap = new ArrayList<>();
 
-    public Gracz(String imie, String nazwisko, String email, String nick, String hasło,int idRola, String RODO) throws Exception {
+    public Gracz(String imie, String nazwisko, String email, String nick, String hasło,int idRola, String RODO, int zapis) throws Exception {
 
         this.imie = imie;
         this.nazwisko = nazwisko;
@@ -32,6 +33,7 @@ public class Gracz extends Zapis {
         this.hasło = hasło;
         this.idRola = idRola;
         this.RODO = RODO;
+        this.zapisanyParagraf=zapis;
 
         if (idRola < 0 && idRola > 2) {
             throw new Exception("wybrano niewłaściwy id roli");
@@ -49,7 +51,9 @@ public class Gracz extends Zapis {
 
     public String toString() {
 
-        return dajRole(idRola) + ", " + imie + " " + nazwisko + " , email: " + email + ", Nick: " + nick + ", zgoda udzielona: " + sprawdźRodo(RODO);
+        return dajRole(idRola) + ", " + imie + " " + nazwisko + " , email: "
+                + email + ", Nick: " + nick + ",hasło: "+ hasło
+                + ", zgoda udzielona: " + sprawdźRodo(RODO);
 
     }
 
@@ -59,12 +63,12 @@ public class Gracz extends Zapis {
 
     }
 
-    public static String dajNick() {
+    public String dajNick() {
         return nick;
 
     }
 
-    public static String dajHasło(){
+    public String dajHasło(){
         return hasło;
 
     }
@@ -77,6 +81,8 @@ public class Gracz extends Zapis {
             return false;
         }
     }
+
+
 
     void otworzZapisanaGre() {
 
